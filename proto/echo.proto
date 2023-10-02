@@ -1,0 +1,20 @@
+syntax = "proto3";
+package api;
+
+// The request message containing the HTTP user agent
+message EchoRequest {
+  string message = 1;
+}
+
+// The response message containing the decision to accept or reject the HTTP User Agent
+message EchoResponse {
+  string message = 1;
+  string user_agent = 2;
+}
+
+// The echo service definition.
+service EchoService {
+  // Send an HTTP user agent and the api will decide whether to block or accept it
+  rpc Echo (EchoRequest) returns (EchoResponse);
+}
+
