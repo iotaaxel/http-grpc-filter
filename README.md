@@ -61,6 +61,25 @@ RESPONSE=EchoResponse { message: "Blocking the Request.", user_agent: "Mozilla/5
 ```
 
 ## Testing
+```console
+$ cargo test
+
+#################################### Sample output below ####################################
+Finished test [unoptimized + debuginfo] target(s) in 0.04s
+     Running unittests src/main.rs (target/debug/deps/echo_client-3d3566e115c08a41)
+
+running 1 test
+test tests::test_bad_client_connection ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/server.rs (target/debug/deps/echo_server-ffaaf4bd0ea8fe8a)
+
+running 1 test
+test tests::test_bad_address ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
 
 ## Troubleshooting
 - If you see a `dquote>` on the terminal when running the client, [history expansion](https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html) might be enabled in your terminal, so retry the input string and escape backspaces. 
