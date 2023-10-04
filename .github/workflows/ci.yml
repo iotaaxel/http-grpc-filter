@@ -13,14 +13,14 @@ jobs:
   build:
     name: Rust project - latest
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        toolchain:
-          # - stable
-          # - beta
-          - nightly
     steps:
     - uses: actions/checkout@v3
+    - name: Install latest nightly toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+          toolchain: nightly
+          override: true
+          # components: rustfmt, clippy
     - name: Install Protoc compiler
       run: sudo apt-get update && sudo apt-get install -y protobuf-compiler
       shell: bash
