@@ -48,7 +48,9 @@ $ cargo run --bin echo-client -- "Hello World\!"
 Run client after starting the server: 
 
 ```console
-$ cargo run --bin echo-client -- "Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0"
+$ cargo run --bin echo-client -- "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:101.0) Gecko/20100101 Firefox/101.0"
+
+RESPONSE=EchoResponse { message: "Accepting the Request.", user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:101.0) Gecko/20100101 Firefox/101.0" }"
 ```
 ### Example 2: Safari User Agent
 Run client after starting the server: 
@@ -57,7 +59,6 @@ $ cargo run --bin echo-client -- "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like
 
 RESPONSE=EchoResponse { message: "Blocking the Request.", user_agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1\n" }
 ```
-
 
 ## Testing
 
