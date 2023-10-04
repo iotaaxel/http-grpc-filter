@@ -34,7 +34,7 @@ Open two terminals or tabs in a terminal.
 Start the server in one terminal (or separate tab): 
 
 ```console
-$ cargo run --bin echo-server"
+$ cargo run --bin echo-server
 ```
 Start the client in another terminal (or separate tab):
 

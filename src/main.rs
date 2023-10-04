@@ -34,3 +34,19 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     Ok(())
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn test_bad_client_connection() {    
+        let client = EchoServiceClient::connect(format!("http://{}:{}", "", "")).await;
+        let result = client.is_ok();
+        assert_eq!(result, false);
+    }
+
+    //TODO: Add good client connection test
+    //TODO: Add bad response test
+}

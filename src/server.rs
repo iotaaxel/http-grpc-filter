@@ -58,3 +58,18 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use std::net::{AddrParseError, IpAddr};
+
+    #[tokio::test]
+    async fn test_bad_address() {    
+        let addr: Result<IpAddr, AddrParseError> = "9.9".parse();
+        let result = addr.is_ok();
+        assert_eq!(result, false);
+    }
+    //TODO: Add good address test
+    //TODO: Add bad server connection test
+    //TODO: Add good server connection test
+}
