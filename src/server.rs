@@ -20,7 +20,7 @@ impl EchoService for Echo {
         println!("Got a request: {:?}", request);
 
         // // Regex for Firefox
-        let re = Regex::new(r"(\s|^)Firefox\s?/\s?(6[0-9]|[7-9][0-9]|\d{3,})(\.|\s|$)").expect("Regex attempt failed.");
+        let re = Regex::new(r"(\s|^)Firefox\s?/\s?([0-9][0-9]|[7-9][0-9]|\d{3,})(\.|\s|$)").expect("Regex attempt failed.");
         let user_agent = request.into_inner().message;
         let decision = if re.is_match(&user_agent) {"Accepting the Request."} else {"Blocking the Request."};
 
