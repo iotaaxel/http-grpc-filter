@@ -1,5 +1,8 @@
 # http-grpc-filter
 
+[![Build Status](https://github.com/iotaaxel/http-grpc-filter/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/iotaaxel/http-grpc-filter/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/iotaaxel/http-grpc-filter/branch/main/graph/badge.svg)](https://codecov.io/gh/iotaaxel/http-grpc-filter)
+
 ## Overview
 
 The API analyzes an HTTP user agent and decides to block or allow it. If the user agent header is from a Safari browser, it should return a decision to block the request. If it is from a Firefox browser, it should allow the request.
